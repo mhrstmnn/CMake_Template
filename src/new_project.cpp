@@ -9,7 +9,7 @@ namespace new_project
   {
     std::cout << "argc: " << argc << "\n\n"
               << "argv:\n";
-    for (size_t i{}; i < argc; ++i)
+    for (unsigned int i{}; i < static_cast<unsigned int>(argc); ++i)
       std::cout << "- " << argv[i] << '\n';
   }
 

@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "new_project.h"
+#include "new_project.hpp"
 
 namespace new_project
 {

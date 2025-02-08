@@ -1,8 +1,7 @@
 #!/bin/zsh
 
-mkdir -p build
-cd build
+mkdir -p ./build
+cd ./build
 
 cmake ..
 cmake --build .
-exit $?

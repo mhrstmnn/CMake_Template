@@ -1,5 +1,7 @@
+# C++
 /build/**
 /cmake-build-*/**
 
+# IDEs
 /.vscode/**
 /.idea/**

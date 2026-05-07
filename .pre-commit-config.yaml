@@ -1,0 +1,43 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+      - id: check-json
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.11.0.1
+    hooks:
+      - id: shellcheck
+        name: check shell scripts
+
+  - repo: https://github.com/pre-commit/mirrors-clang-format
+    rev: v22.1.5
+    hooks:
+      - id: clang-format
+        name: run clang-format
+        args: [--style=file, -i]
+        language: unsupported
+        types_or: [c, c++]
+
+  - repo: local
+    hooks:
+      - id: clang-tidy
+        name: run clang-tidy
+        entry: uv run clang-tidy
+        args: [-p, ./build]
+        language: unsupported
+        files: ^src/
+        types_or: [c, c++]
+        require_serial: true
+
+  - repo: https://github.com/pysentry/pysentry-pre-commit
+    rev: v0.4.5
+    hooks:
+      - id: pysentry
+        name: run pysentry

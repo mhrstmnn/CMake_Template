@@ -3,6 +3,9 @@
 /cmake-build-*/**
 /.cache/**
 
+# Python
+/.venv/**
+
 # IDEs
 /.vscode/**
 !/.vscode/extensions.json

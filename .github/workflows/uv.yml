@@ -1,0 +1,45 @@
+name: uv
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+
+      - name: Lint project
+        run: bash ./scripts/lint.sh
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Build project
+        run: bash ./scripts/build.sh
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: executable
+          path: ./build/new_project
+          retention-days: 3
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: executable
+
+      - name: Test project
+        run: ./new_project

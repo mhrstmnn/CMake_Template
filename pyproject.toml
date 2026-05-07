@@ -1,0 +1,16 @@
+[project]
+name = "cmake-template"
+version = "0.0.1"
+description = "Template for new CMake projects"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    { include-group = "lint" },
+]
+lint = [
+    "clang-tidy>=20.1.0",
+    "pre-commit>=4.2.0",
+]

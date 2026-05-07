@@ -16,17 +16,17 @@ repos:
       - id: shellcheck
         name: check shell scripts
 
-  - repo: https://github.com/pre-commit/mirrors-clang-format
-    rev: v22.1.5
+  - repo: local
     hooks:
       - id: clang-format
         name: run clang-format
-        args: [--style=file, -i]
+        entry: uv run clang-format -i
+        args: [--style=file]
         language: unsupported
+        files: ^src/
         types_or: [c, c++]
+        require_serial: false
 
-  - repo: local
-    hooks:
       - id: clang-tidy
         name: run clang-tidy
         entry: uv run clang-tidy

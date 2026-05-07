@@ -41,5 +41,8 @@ jobs:
         with:
           name: executable
 
+      - name: Fix permission
+        run: chmod +x ./new_project
+
       - name: Test project
         run: ./new_project

@@ -1,0 +1,15 @@
+Checks: >
+  *,
+  -llvm-header-guard,
+  -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -cppcoreguidelines-avoid-c-arrays,
+  -hicpp-avoid-c-arrays,
+  -modernize-avoid-c-arrays,
+  -modernize-use-trailing-return-type,
+  -portability-avoid-pragma-once,
+  -altera-unroll-loops,
+  -llvmlibc-*
+
+WarningsAsErrors: "*"
+HeaderFilterRegex: "(.*/)?src/.*"
+FormatStyle: file

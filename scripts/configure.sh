@@ -9,5 +9,3 @@ if [[ "$(uname)" == 'Darwin' ]]; then
 else
   cmake -B ./build
 fi
-
-cmake --build ./build

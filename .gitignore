@@ -1,7 +1,10 @@
 # C++
 /build/**
 /cmake-build-*/**
+/.cache/**
 
 # IDEs
 /.vscode/**
+!/.vscode/extensions.json
 /.idea/**
+/.zed/**

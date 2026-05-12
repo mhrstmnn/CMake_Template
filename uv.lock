@@ -3,6 +3,28 @@ revision = 3
 requires-python = ">=3.13"
 
 [[package]]
+name = "attrs"
+version = "26.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz", hash = "sha256:d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32", size = 952055, upload-time = "2026-03-19T14:22:25.026Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl", hash = "sha256:c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309", size = 67548, upload-time = "2026-03-19T14:22:23.645Z" },
+]
+
+[[package]]
+name = "cattrs"
+version = "26.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "attrs" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a0/ec/ba18945e7d6e55a58364d9fb2e46049c1c2998b3d805f19b703f14e81057/cattrs-26.1.0.tar.gz", hash = "sha256:fa239e0f0ec0715ba34852ce813986dfed1e12117e209b816ab87401271cdd40", size = 495672, upload-time = "2026-02-18T22:15:19.406Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/80/56/60547f7801b97c67e97491dc3d9ade9fbccbd0325058fd3dfcb2f5d98d90/cattrs-26.1.0-py3-none-any.whl", hash = "sha256:d1e0804c42639494d469d08d4f26d6b9de9b8ab26b446db7b5f8c2e97f7c3096", size = 73054, upload-time = "2026-02-18T22:15:17.958Z" },
+]
+
+[[package]]
 name = "cfgv"
 version = "3.5.0"
 source = { registry = "https://pypi.org/simple" }
@@ -37,22 +59,17 @@ wheels = [
 ]
 
 [[package]]
-name = "clang-tidy"
-version = "22.1.0.1"
+name = "clangd-tidy"
+version = "1.1.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/49/10/40a7328ed7903ee52d2f23ba033fb1147b1ed2f5ccbdef893d44d639aac8/clang_tidy-22.1.0.1.tar.gz", hash = "sha256:acc00c84a8f4d17d6c07697551fae9ed549f41dd54433d842f830e1e0d15e64e", size = 11359, upload-time = "2026-03-30T09:22:22.681Z" }
+dependencies = [
+    { name = "attrs" },
+    { name = "cattrs" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/41/34/9ed0852f40ddf0a4aaf4cad23756064ad48141e12dff178d49007194f432/clangd_tidy-1.1.1.tar.gz", hash = "sha256:d470b46a9ed6a24a0202588d23e1f892d8f15db3572ed6690c0679439795a1c8", size = 23898, upload-time = "2026-02-09T03:58:09.883Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/be/f2/3c3614a4004c4d12b5310648ba13e19342b38c32d919569f6523a136f422/clang_tidy-22.1.0.1-py2.py3-none-macosx_10_9_x86_64.whl", hash = "sha256:b84ce0e74c9d2ce486c48b2362f7a94135435deb77e88a3a162bc7dbd8a29c32", size = 30220748, upload-time = "2026-03-30T09:21:37.841Z" },
-    { url = "https://files.pythonhosted.org/packages/c3/ff/a8f501f2a9dc65e698b914c65a90a4235fe08d4159ecf88036f39a3e6d66/clang_tidy-22.1.0.1-py2.py3-none-macosx_11_0_arm64.whl", hash = "sha256:6449aa689ecca34bf12159194fa82d0fe90a2766398065b00cf8743c4176bd20", size = 29312847, upload-time = "2026-03-30T09:21:41.454Z" },
-    { url = "https://files.pythonhosted.org/packages/88/91/0d0d7fcc11c8d26207f4d9628032a6fc5f93c365c78a3f2224e291cfe5c6/clang_tidy-22.1.0.1-py2.py3-none-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:f6c9fd547af8cd78961ccc42bdf4ebfa8e8ee1a7091ab1ea18f8756ac974082d", size = 40361601, upload-time = "2026-03-30T09:21:45.181Z" },
-    { url = "https://files.pythonhosted.org/packages/5b/03/5019fb4b675d06058149b551133598d52b16d63799a2616bc4c11d15653f/clang_tidy-22.1.0.1-py2.py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:147f65292ef4bc27642bc4fe7330c47ff2eb7687eedf29ce2600b202f8cd54b6", size = 42210672, upload-time = "2026-03-30T09:21:49.579Z" },
-    { url = "https://files.pythonhosted.org/packages/87/18/1363b03517a6bd6dd931bba1206f2a0e7c9ac1c20877a9ac14e57e70da14/clang_tidy-22.1.0.1-py2.py3-none-manylinux_2_28_i686.whl", hash = "sha256:0ed693762a926668460bb757dfee1a3bb66645641041f5f5d0f65c3b8720f7c0", size = 47699477, upload-time = "2026-03-30T09:21:54.081Z" },
-    { url = "https://files.pythonhosted.org/packages/3d/44/bff82b4e2163b7786db6af2074ed86bee9f840ff09c761d82a31afdb5ad6/clang_tidy-22.1.0.1-py2.py3-none-manylinux_2_31_armv7l.whl", hash = "sha256:d947a8f7419e56704b895343c385fc201a063e43c2f042f859ee1088987b78d9", size = 38806108, upload-time = "2026-03-30T09:21:58.465Z" },
-    { url = "https://files.pythonhosted.org/packages/6b/56/6e912f4f960ead713338b777b1b680021f90ebdd04956354244569a059a9/clang_tidy-22.1.0.1-py2.py3-none-musllinux_1_2_armv7l.whl", hash = "sha256:f596bbb6295ac787f351825b36a7117762a1d82cc0bcdff25623580b7d90145b", size = 39643741, upload-time = "2026-03-30T09:22:02.799Z" },
-    { url = "https://files.pythonhosted.org/packages/8e/b0/3e4c6f727b6c948d7a34afd8f974b27788aaeba22a1adc9b1bedb5129028/clang_tidy-22.1.0.1-py2.py3-none-musllinux_1_2_i686.whl", hash = "sha256:87966492e4b045961a35a65b1e8efe2e4e41bda3226860a00b3b15bd58d2b743", size = 49881724, upload-time = "2026-03-30T09:22:07.487Z" },
-    { url = "https://files.pythonhosted.org/packages/99/42/d4dd4ea3d2ba9fe67aea759baea9af1ef8a0ad3879ed6dc82a073df14e3b/clang_tidy-22.1.0.1-py2.py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:bac1ab448c68022d599fba92962425c87c10f2006da45f996ce8e5cc8c51401e", size = 44841619, upload-time = "2026-03-30T09:22:12.809Z" },
-    { url = "https://files.pythonhosted.org/packages/e6/97/828cbb65ea46ee6a17c6869bcf91a1aa012eef1bfedbb554526868ab13c8/clang_tidy-22.1.0.1-py2.py3-none-win32.whl", hash = "sha256:9a7b3ff81098fdd9ee484f6bc861599c40b138670ebc57778afc7a8c6891d713", size = 22235387, upload-time = "2026-03-30T09:22:16.386Z" },
-    { url = "https://files.pythonhosted.org/packages/f6/5b/b5e5a286ff06111158f769892c56bf811806bd4d4d5aba93960b9c835e31/clang_tidy-22.1.0.1-py2.py3-none-win_amd64.whl", hash = "sha256:e9f1e762afe3f5f3511ca7f50132d4d6d5c58a3f6760089ed45d2b3506cf7d07", size = 25140458, upload-time = "2026-03-30T09:22:20.31Z" },
+    { url = "https://files.pythonhosted.org/packages/e8/95/33a9adb7bf48f8863e278aa3efae3d1aca9dad8a7038f9fa477ec9d1c02e/clangd_tidy-1.1.1-py3-none-any.whl", hash = "sha256:305883501ead9fe20d5db39a5de5a18646c886bee37d2c88bee7a52e898c6c4a", size = 21759, upload-time = "2026-02-09T03:58:08.37Z" },
 ]
 
 [[package]]
@@ -63,12 +80,12 @@ source = { virtual = "." }
 [package.dev-dependencies]
 dev = [
     { name = "clang-format" },
-    { name = "clang-tidy" },
+    { name = "clangd-tidy" },
     { name = "pre-commit" },
 ]
 lint = [
     { name = "clang-format" },
-    { name = "clang-tidy" },
+    { name = "clangd-tidy" },
     { name = "pre-commit" },
 ]
 
@@ -77,12 +94,12 @@ lint = [
 [package.metadata.requires-dev]
 dev = [
     { name = "clang-format", specifier = ">=22.1.5" },
-    { name = "clang-tidy", specifier = ">=20.1.0" },
+    { name = "clangd-tidy", specifier = ">=1.1.1" },
     { name = "pre-commit", specifier = ">=4.2.0" },
 ]
 lint = [
     { name = "clang-format", specifier = ">=22.1.5" },
-    { name = "clang-tidy", specifier = ">=20.1.0" },
+    { name = "clangd-tidy", specifier = ">=1.1.1" },
     { name = "pre-commit", specifier = ">=4.2.0" },
 ]
 
@@ -194,6 +211,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/da/92/1446574745d74df0c92e6aa4a7b0b3130706a4142b2d1a5869f2eaa423c6/pyyaml-6.0.3-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:16249ee61e95f858e83976573de0f5b2893b3677ba71c9dd36b9cf8be9ac6d65", size = 829923, upload-time = "2025-09-25T21:32:54.537Z" },
     { url = "https://files.pythonhosted.org/packages/f0/7a/1c7270340330e575b92f397352af856a8c06f230aa3e76f86b39d01b416a/pyyaml-6.0.3-cp314-cp314t-win_amd64.whl", hash = "sha256:4ad1906908f2f5ae4e5a8ddfce73c320c2a1429ec52eafd27138b7f1cbe341c9", size = 174062, upload-time = "2025-09-25T21:32:55.767Z" },
     { url = "https://files.pythonhosted.org/packages/f1/12/de94a39c2ef588c7e6455cfbe7343d3b2dc9d6b6b2f40c4c6565744c873d/pyyaml-6.0.3-cp314-cp314t-win_arm64.whl", hash = "sha256:ebc55a14a21cb14062aa4162f906cd962b28e2e9ea38f9b4391244cd8de4ae0b", size = 149341, upload-time = "2025-09-25T21:32:56.828Z" },
+]
+
+[[package]]
+name = "typing-extensions"
+version = "4.15.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz", hash = "sha256:0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466", size = 109391, upload-time = "2025-08-25T13:49:26.313Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl", hash = "sha256:f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548", size = 44614, upload-time = "2025-08-25T13:49:24.86Z" },
 ]
 
 [[package]]

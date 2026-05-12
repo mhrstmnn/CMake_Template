@@ -12,6 +12,6 @@ dev = [
 ]
 lint = [
     "clang-format>=22.1.5",
-    "clang-tidy>=20.1.0",
+    "clangd-tidy>=1.1.1",
     "pre-commit>=4.2.0",
 ]

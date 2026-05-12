@@ -28,8 +28,7 @@ repos:
 
       - id: clang-tidy
         name: run clang-tidy
-        entry: uv run clang-tidy
-        args: [-p, ./build]
+        entry: uv run clangd-tidy
         language: unsupported
         files: ^src/
         types_or: [c, c++]

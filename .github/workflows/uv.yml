@@ -13,6 +13,11 @@ jobs:
         with:
           enable-cache: true
 
+      - name: Install clangd
+        run: |
+          sudo apt update
+          sudo apt -y --no-install-recommends install clangd
+
       - name: Lint project
         run: bash ./scripts/lint.sh
 

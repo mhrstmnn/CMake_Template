@@ -20,12 +20,11 @@ repos:
     hooks:
       - id: clang-format
         name: run clang-format
-        entry: uv run clang-format -i
-        args: [--style=file]
+        entry: uv run clang-format
+        args: [-i]
         language: unsupported
         files: ^src/
         types_or: [c, c++]
-        require_serial: false
 
       - id: clang-tidy
         name: run clang-tidy

@@ -18,24 +18,24 @@ repos:
 
   - repo: local
     hooks:
-      - id: clang-format
-        name: run clang-format
-        entry: uv run clang-format
-        args: [-i]
-        language: unsupported
-        files: ^src/
-        types_or: [c, c++]
-
       - id: clang-tidy
-        name: run clang-tidy
+        name: lint with clang
         entry: uv run clangd-tidy
         language: unsupported
         files: ^src/
         types_or: [c, c++]
         require_serial: true
 
+      - id: clang-format
+        name: format with clang
+        entry: uv run clang-format
+        args: [-i]
+        language: unsupported
+        files: ^src/
+        types_or: [c, c++]
+
   - repo: https://github.com/pysentry/pysentry-pre-commit
     rev: v0.4.5
     hooks:
       - id: pysentry
-        name: run pysentry
+        name: audit dependencies
